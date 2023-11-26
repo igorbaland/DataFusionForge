@@ -1,0 +1,14 @@
+CONSTANT
+  O(1)
+
+LOGARITHMIC
+  O(log n)
+
+LINEAR
+  O(n)
+
+QUADRATIC
+  O(n2)
+
+EXPONENTIAL
+  O(2n)
