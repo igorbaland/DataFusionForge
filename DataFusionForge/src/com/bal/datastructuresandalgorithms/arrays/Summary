@@ -1,0 +1,29 @@
+Arrays
+  simplest data structure
+  built into most programming languages
+    in some languages like
+      JavaScript and Python
+        arrays are dynamic
+          which means they can grow or shrink automatically
+            in Java
+              they are static
+                Java provides a dynamic array implementation using
+                  ArrayList class
+                    Each time ArrayList gets full, it will grow
+                      by 50% of it's size
+
+Arrays are great when we know ahead of time
+  how much things we want to store in them
+
+The runtime complexity of various objects
+ Lookup by Index
+   O(1)
+    Worst case scenario, this item is going to be the last item in array
+     Lookup by Value
+       O(n)
+     Because this item must to be copied to a new array
+     Insert
+       O(n)
+       shifted to the left in case of
+         Delete
+           O(n)
