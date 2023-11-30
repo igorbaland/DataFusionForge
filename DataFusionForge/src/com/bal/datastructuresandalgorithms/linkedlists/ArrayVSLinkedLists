@@ -1,0 +1,31 @@
+static Arrays
+  have a fixed size
+  certain operation are fast in arrays
+
+    If we don't know, we should use
+
+      dynamic array
+        dynamic arrays grow by 50-100%
+          wasting of memory
+
+  linked lists
+    don't waste memory
+      only take memory as they really need, nothing more
+      But linked lists take a bit of extra memory because each node should store
+        the address of the next node
+    certain operation are slow
+
+Runtime complexity
+
+Lookup              Arrays      Linked Lists
+  By index__________O(1)________O(n)
+  By value__________O(n)________O(n)
+
+Insert
+  Beginning/End_____O(n)________O(1)
+  Middle____________O(n)________O(n)
+
+Delete
+  Beginning_________O(n)________O(1)
+  Middle____________O(n)________O(n)
+  End_______________O(n)________O(n)
