@@ -1,0 +1,10 @@
+Linked Lists
+ are probably the most commonly used data structures, after arrays.
+   They solve many of problems with arrays
+     also used in building more complex data structures.
+We are going look at the
+  Link lists
+    how they are structured in memory
+  Runtime complexity
+    of various operations of them
+  Build a linked List
