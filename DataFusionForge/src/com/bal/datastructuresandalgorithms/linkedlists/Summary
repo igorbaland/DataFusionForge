@@ -1,0 +1,27 @@
+Linked lists
+  the second most commonly used data structures after arrays
+    unlike arrays
+      they automatically grow and shrink without wasting memory
+        but they require a little bit more memory
+          because each node should have a reference to the next or previous node
+Runtime complexity  of various operations in linked lists.
+Lookup
+  by Index
+    O(n)
+  by value
+    O(n)
+Insert
+  Beginning/End
+    O(1)
+  Middle
+    O(n)
+Delete
+  Beginning
+    O(1)
+  Middle
+    O(n)
+  End
+    O(n)
+      in single linked lists
+    O(1)
+      in doubly linked lists
