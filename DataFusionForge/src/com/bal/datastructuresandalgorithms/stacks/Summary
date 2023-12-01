@@ -1,0 +1,7 @@
+Stacks
+  Last-In_First-Out(LIFO)
+    Undo or do things in reverse order
+  Can be implemented using arrays/ linked lists
+  Runtime complexity
+    all operations
+      O(1)
