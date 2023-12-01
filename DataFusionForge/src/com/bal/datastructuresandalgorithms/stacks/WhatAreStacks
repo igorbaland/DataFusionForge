@@ -1,0 +1,48 @@
+Stacks
+  are powerful data structures
+    that can help us solve many complex programming problems
+      We can use them to implement
+        1. the undo feature in our applications
+        2. to build compilers
+             eg syntax checking
+             compilers use stacks of expressions
+        3. to evaluate arithmetic expressions
+             (eg 1 + 2 * 3)
+             Let's say we want to build a calculator and allow the user to type an arithmetic expression like this
+        4. to build navigation (eg forward/back)
+          For example, we browsers and android devices have
+            forward and backward buttons.
+              We can implement these buttons using stacks
+
+The structure of stacks
+  the best way to understand stacks is to this of
+    a stack of books.
+      We can stack a bunch of books on top of each other, but we can only view or remove the top book.
+        If we want to get to the bottom book, we have to remove all the books one by one.
+          This is what we call
+            Last In First Out(LIFO)
+              and this is exactly the reason why wen use that for implementing the undo feature or navigation in our
+              applications. Imagine each object in stack represents an action that the user performed in text editor.
+              we have many actions, action1, action2, action3... To undo these actions we start with the last action.
+              The last action that was performed
+                is the first one
+                 that can be undone, we can take this object  out of our stack and call one of it's methods to undo the
+                 action. Internally, we use
+                   an array or a linked list to store the objects in a stack.
+                     Stack is basically a
+                       wrapper around an array or linked lists that give us a different way of storing and accessing
+                       objects.
+
+Various operations that stack supported and the runtime complexities. Stacks have 4 operations
+  1. push(item), which adds an item on top of the stack
+  2. pop(), remove the item of the top
+  3. peek(), which returns the item on the top without removing it from the stack.
+  4. isEmpty(), which tells us is that stack is empty
+
+We don't have a lookup, because stacks are not really meant for that. We don't use stacks to store a lif of products,
+customers and so on.
+
+All operations of stacks are running in
+  O(1)
+
+
