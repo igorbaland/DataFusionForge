@@ -1,0 +1,16 @@
+Queues
+  First-in First-out (FIFO)
+
+  Sharing a resource amongst many consumers
+
+  Priority Queues
+
+Runtime complexity
+    enqueue
+        O(1)
+    dequeue
+        O(1)
+    peek
+        O(1)
+    isEmpty
+        O(1)
