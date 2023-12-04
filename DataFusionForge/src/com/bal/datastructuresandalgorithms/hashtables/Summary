@@ -1,0 +1,15 @@
+Hash Tables
+  - to store key/value pairs
+  - insert, remove, lookup run in O(1)
+  - hash function
+  - Collision
+    - Chaining
+    - Open addressing
+      - Linear
+        (hash1 + i) % table_size
+          - Cluster
+      - Quadratic
+        (hash1 + i²) % table_size
+          - infinite loop
+      - Double Hash
+        (hash1 + i * hash2) % table_size
