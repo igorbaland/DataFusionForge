@@ -1,0 +1,22 @@
+2 Categories:
+    1. Breath first
+
+                        20
+            10                      30
+        6           21          4
+    3       8
+
+        In level order traverse
+            we go lvl by lvl
+                we start from the top
+                    20
+                        10  and 30
+                            and so on
+
+        Implement this
+            1. How many levels do we have
+                that is equal to the high our tree
+                    from leaf to the root
+
+
+    2. Depth first

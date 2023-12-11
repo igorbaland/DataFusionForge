@@ -1,0 +1,63 @@
+Tree is a data structure that stores elements in a hierarchy
+  We refer to this elements as
+    1. NODE
+         Each Node  contains a
+           value or data
+    2. lines that connect them as edges.
+    3. The top node of the tree is called
+      ROOT
+
+                            Root
+                            (1)
+                           /   \
+                          (2)  (3)  Children
+                         /  \    /\
+                        (4) (5) (6)(7)
+                                    Leaf node
+
+In this example ou root has maximum of 2 children
+
+In this section we will focusing entirely on binary trees because they are easier to understand. Once we learn binary
+trees, we can quickly  learn about  the other types of trees
+
+Where we use trees?
+  - represents hierarchical data
+      such as tree of people in our organization
+      files
+      folders
+  - databases
+      database management systems  use trees  for indexing they can quickly look up data
+  - implementing autocompletion
+      Chrome
+        stores all our past web searches in a tree
+  - compilers
+      use a special type of tree called syntax tree to parse expressions.
+  - compression(JPEG, MP3)
+
+Runtime complexity
+  binary search tree
+    left < node < right
+
+                                (7)
+                               /   \
+                              (4)  (9)
+                             /  \    /\
+                            (1) (6) (8)(10)
+                  the left subtree   the right subtree
+  the values is smaller than seven      are grater than 7
+
+  Why does it matter?
+    By organizing our data this way, we can quickly look up a value. Unlike arrays and linkedLists, we don't have to
+    traverse the entire tree to find a value.
+
+    Logarithmic time complexity
+      This tree has 7 nodes, but we found our target note(1) with only 3 comparisons, because i every step we threw half
+      of our nodes away. Whenever we throw out half of our items and narrow down our search, we have logarithmic time
+      complexity.
+
+  Lookup
+    O(log n)
+  Insert
+    O(log n)
+  Delete
+    O(log n)

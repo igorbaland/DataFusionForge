@@ -1,0 +1,34 @@
+Binary tree can only have
+  2 x Children
+    A node without any children call a
+      Leaf.
+        height == 0
+          As we go up in the tree
+            the height increases
+
+    Depth = 0
+      As we go in the tree
+        the depth increases
+          from the root to the leaf
+
+
+
+Binary searching tree
+  all the values in the left subtree of the nodes
+    are smaller
+  right subtree
+    are greater
+
+Few different algorithms for traversing binary trees. These algorithms in 2 categories:
+    1. Breadth
+        Level-order
+        
+    2. Depth First
+        Pre-order
+            Root, Left, Right
+        In-order
+            Left, Root, Right
+        Post-order
+            Left, Right, Root
+
+

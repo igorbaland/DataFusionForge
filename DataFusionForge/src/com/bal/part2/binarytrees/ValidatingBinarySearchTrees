@@ -1,0 +1,43 @@
+Binary Search tree
+  all the values of the left subtree of the nodes
+    are smaller
+  on the right subtree of the nodes
+    are greater than the node itself
+
+    Example
+
+                            20
+                10                     30
+            6       21          4                       //21 right, 4 left
+        3       8
+
+    Solve this problem
+        1. We can use recursion, we search from the top (root)
+            for every node we look at the left and right subtrees
+                if all these values are in the right range
+                    then we move to the next node
+           We can use recursion to visit every node in this tree
+                This solution is a little bit
+                    costly, because that will end up visiting the left and right subtrees multiple times.
+                        For example:
+                        When we visited 20, we have to look every node in the left subtree and make sure there are
+                        smaller than 20.
+
+        2. Better way
+            We can traverse this tree and for every node, we can check to see
+                if the value in this node is the right range
+                    We start from the top(root)
+                        if this was the only node in our tree
+                            Left subtree
+                            (-infinity, +infinity) //  left < 20 > right
+                            (-infinity, 20)     //  left, 20 can't be not included
+                            (-infinity, 10)     //left, 10 isn't included, maxValue = 9
+                                            (10, 20)    // right of the left subtree,
+                            (-infinity, 6)
+                                            (6, 10)
+                                                           Right subtree after root
+                                                            (20, +infinity), +infinity, no limit
+                                                    (20, 30)    // and here we have 4
+
+
+

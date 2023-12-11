@@ -1,0 +1,47 @@
+Two different approaches for traversing trees. All these approaches are classified in two categories.
+  1. Breadth First (also called Level Order traverse)
+                (7)             first level: Start at the root our tree
+              /     \
+            (4)     (9)         second level: 4 and 9
+            /  \    /  \
+          (1)  (6) (8) (10)     third level: 1, 6, 8, 10
+
+                                We are going to visit our nodes in this order 7, 4, 9, 1, 6, 8, 10
+
+  2. Depth first
+
+             We have three different ways here,
+                1. pre-order: Root, Left-subtree and than the Right-subtree
+                2. in-order: Left-subtree, Root, Right-subtree
+                3. post-order: Left, Right, root
+
+    1. pre-order traversal: start at the root, and print the value of this node.
+        Then we got to left-subtree (4) and
+          the move to the left(1). That is the single node.
+            We have to go back to previous sub tree (4). We have visited the left-subtree,
+              its time to visit the right-subtree (6)
+                We visited a root on the left-subtree. the right-subtree
+                    9
+                   /
+                  8 -> single
+                    9 -> previously node
+                     \
+                     10 -> right subtree
+
+        In this order: 7, 4, 1, 6, 9, 8, 10
+
+    2. In-order traversal (Left, Root, Right)
+      the left-subtree first
+        (4)
+       /   \
+      (1)  (6)
+
+      (1) -> (4) -> (6) -> (7)
+      8 -> 9 -> 10
+
+    3. Post-order traversal (Left, right, root)
+        left: 1 ->  6 -> 4
+        right: 8 -> 10 -> 9
+        root: 7
+
+

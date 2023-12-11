@@ -1,0 +1,18 @@
+Printing the nodes at a given distance from the route.
+    For example, write code to print all nodes with distance 3 from the root
+
+    How to solve this problem?
+        Recursion. Breaking this problem down into
+            Smaller and easier to solve problems
+                distance > 0
+
+                distance = 3
+
+
+                                20                      //Distance == 3
+                    10                      30          //Distance == 2
+            6               21          4               //Distance == 1
+        3       8                                       //Distance == 0
+
+                                                        //distance == 0, print values of the nodes
+

@@ -1,0 +1,19 @@
+We are going use recursion. We are gonna break down a large complex problem into bunch of smaller easier to solve
+problem.
+
+                    20
+        10                          30
+    6          21               4
+3      8
+
+To find a minimum value in this tree, we should find the minimum in the
+ left
+ right
+   subtrees. Then we will compare those minimum values with the value in the root. In this way, we can find minimum
+   in our binary tree
+        right subtree
+        20
+            30
+        4
+            We are going do this recursively. When it comes to finding the minimum value in the right subtree. We start
+            with the leaf node.
