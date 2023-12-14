@@ -1,0 +1,10 @@
+AVL Trees
+  - balanced and unbalanced
+  - BST (Binary search tree)
+    - average:
+        O(log n)
+    - worst
+        O(n)
+  - Self-balancing trees
+    - AVL trees Rotations:
+        Left, Right, Left-right and right-left

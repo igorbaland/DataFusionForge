@@ -1,0 +1,57 @@
+            30
+        15
+            18
+Rotate 15 to the left
+    Left Skewed tree
+        Rotate 30 to the right
+            18
+        15      30
+        add next few values
+
+                18
+        15              30
+    10      16      //disconnect 16, 15 to the root, add 16
+7
+
+
+                15
+        10              18
+    7               16      30
+
+
+
+add another value, imbalanced
+
+                15
+        10              18
+    7               16      30
+        8
+
+        Imbalance
+
+        10
+    7
+        8
+
+            Left-Right rotation
+
+            10
+        8
+    7
+
+        8
+    7       10
+
+
+                15
+         8             18
+    7       10      16      30
+
+
+
+
+
+
+
+
+

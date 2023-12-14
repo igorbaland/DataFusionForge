@@ -1,0 +1,32 @@
+The balance tree
+  Different between the height on the left and right subtrees of every node should be less or equal to one
+    height(left) - height(right) <= 1
+      We can not have a long branch
+
+Perfect tree
+    height(left) - height(right) == 0
+
+Unbalanced Tree
+  Height difference = 2
+
+Right Skewed
+    ()
+        ()
+            ()
+    Most of the nodes only have the right child
+
+Left skewed
+
+    These skewed trees are actually the worst types of binary search trees. They are liked linkedListed. If the value
+    we are looking for is the last node of this tree, we have to traverse this entire tree to find it.
+
+How the trees become unbalanced?
+    This happened, when we insert sorted values
+        7, 10, 15, 20, 25. We will end in the left subtree
+
+Self-Balancing trees
+  - AVL trees (Adelson-Velsky and Landis)
+  - Red-black Trees
+  - B-trees
+  - Splay trees
+  - 2-3 trees
