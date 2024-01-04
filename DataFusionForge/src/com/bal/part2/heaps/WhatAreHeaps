@@ -1,0 +1,139 @@
+Heap is a special type of tree with a two properties:
+  1. Complete tree
+      Complete -> lvl will be field from the left to the right
+            ()
+        ()      ()
+      ()  ()   ()  ()
+
+              ()
+          ()      ()
+        ()  ()   ()
+
+
+        Not complete tree
+                    ()
+                ()      ()
+              ()  ()      ()
+
+                RL -> not complete
+
+                    ()
+                ()
+             ()     ()
+
+
+  2. Heap property
+        the value of every node is greater  than or equal. If we have 20 in the root, the children of this root should
+        be less then or equal 20. Both 10 and 15 are smaller than 20. So they satisfy
+            heap property. Similarly, the children of 10 and 15 are smaller than the nodes themselves.
+                20
+        10              15  //(21)
+    4       5       6
+
+            if we replace 15 with 21, we don't have a valid heap, because 21 is greater than 20.
+
+Heap is complete binary tree that satisfies the
+  Heap property
+
+
+Max heap
+  the root node holds the largest value. And we as go down, the three values get smaller.
+
+Min heap
+  where the root node stores the smallest value.
+
+
+Heaps application
+  - sorting (HeapSort)
+  - Graph algorithms (shortest path)
+    for example, we can use heaps to find the shortest path between two nodes in the graph.
+      this the algorithm that powers our GPS
+  - priority queues
+  - finding the Kth smallest/largest value
+
+Operation and runtime complexity
+[10, 5, 17, 4, 22]
+  Satisfy the heap property
+   The value should be greater or equal to his children
+     To do this
+        we insert a new item in a leaf node and it is not in the right position, we move it up until  it is in the right
+        place.
+
+        10
+      5
+
+        10
+    5       17
+    Bubble up
+        move the 17 to the top
+
+        17
+    5       10
+        now we have the valid heap
+
+        17
+      5     10
+    4
+        valid heap
+
+            17
+        5           10
+    4       22      //bubble up
+
+
+                17
+        22          10      //bubble up 22, 17
+     4      5
+
+
+                    22
+            17          10
+         4      5
+         valid heap
+
+
+
+
+    look up
+        h = log(n)
+        O(log n) / O(h)
+
+    deletion
+        we can only delete the root node
+
+                                  22
+                            17          10
+                         4      5
+
+        let's remove 22. Now we have to fill this node with another value
+
+                                   5
+                              17        10
+                           4
+
+                      //bubble down, opposite from bubble up
+                    to move the 5 down, we should look at the children, pick the larger one and swap it with the 5
+
+                            17
+                         5      10
+                      4
+                      now we have a valid heap. If our heap was not valid, we would keep babbling  down the five is in
+                      the right position
+
+        time complexity
+          h= log(n)
+
+    findMaxValue
+        O(1)
+            return root
+
+
+
+
+
+
+
+
+
+
+

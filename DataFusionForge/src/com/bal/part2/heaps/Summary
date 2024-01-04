@@ -1,0 +1,30 @@
+Heap is
+  complete binary tree
+    which means every level except potentially in the last level is filled with nodes
+      all levels are filled from the left to the right
+
+We have two types of heaps
+  Max heaps
+    the value of every node is greater than or equal to his children.
+        22
+    17        10
+ 4     5
+
+  Min heaps
+    mit is the opposite of max heaps
+
+
+Adding or removing the item from a heap runs in
+  logarithmic time, because as part of this operations
+    we have to bubbleUp or bubbleDown an item  and the maximum one item can travel is equal to the height of the heap.
+      In max we can prove that the height of a complete binary tree equals  the logarithm(N)
+        where n is the number of nodes in the tree.
+        insert()
+          O (log n)
+        remove()
+          O (log n)
+
+        Heaps don't support looking up values because of how the nodes are structured. They only  allow us to inspect
+        the max or min value depending on the type of the heap.
+          In the max heap is the largest value is always at the root and we can read it in constant time. 
+

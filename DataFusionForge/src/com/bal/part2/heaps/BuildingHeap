@@ -1,0 +1,17 @@
+We usually use an array to implement a heap
+
+                0 (20)
+           1 (10)           2(15)
+     3(4)       4(5)
+
+    Calculating indexes of
+         leftChild = parent * 2 + 1
+         rightChild = parent * 2 + 2
+
+         parent = (index - 1) / 2
+
+
+    Heap class
+    int []
+    insert(int)
+    remove()
