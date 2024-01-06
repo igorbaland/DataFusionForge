@@ -1,0 +1,80 @@
+CAT
+we start by declaring a variable  called
+  current
+    that points to the root node of this trie, empty char
+
+    current -> ()
+
+We look at the root node and ask, do you have a child fo
+  C
+    if not
+      we are going to create that child, and than we set the
+        current to point that child
+
+                    ()
+     current -> (C)
+
+Now we asked this node, do you have have child for
+  A
+    if not
+      we are going to create that child and then set the current to point that child
+
+                    ()
+                 (C)
+      current -> (A)
+
+
+                    ()
+                  (C)
+                  (A)
+      current ->  (T)
+
+      Finally, we should mark this node as the end of the word. Because these characters could easily be a prefix for
+      another word, like catch
+                C
+                A
+                T
+             C
+             H
+
+      Later in the future, when we traverse our trie, we want to be able to easily figure out what the words we have
+      stored in our trie. That is why we have to mark certain nodes as the end of a word.
+
+      In the future if we want to insert  the word CAN, once again start from the root of a tree, we walk down our tree,
+      but in this case we already have notes fon C and A, all we have to do to append N as a child of A
+
+                C
+                A
+             T      N
+          C
+          H
+
+Implement this, we need a couple classes
+  Trie
+    Node
+      fields:
+        value: char
+        children: Node[26]                      //(Array or HashMap), index 26 -> because in English we have 26 letters
+                                                //Each childNode can represent 1 letter in English -> ABC...
+        isEndOfWar: boolean
+  insert(word: String)
+
+  When we are using an array, we need to figure out at which index, we have to store a given child like D or G. We
+  calculate the index using this expression.
+    index = 'd' - 'a'
+     In Java, when we subtract two characters from each other, Java will convert these characters to their numeric
+     representation. Internally, a lowercase
+       'a' is a representing using
+         97.
+
+  Let's say we want to store
+    'd'
+      the new representation of 'd'
+        100.
+  So 100 - 97 == 3
+    So we should store 'd' at index 3
+
+
+
+
+

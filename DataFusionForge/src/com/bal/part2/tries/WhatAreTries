@@ -1,0 +1,69 @@
+Tries are another kind of trees, but they are not binary trees. Each child can have several nodes. The name "trie"
+actually comes from reTRIEval. Some people say
+  trie others call it
+  trees.
+    The other names for tries are
+      digital
+      radix
+      prefix
+
+We use tries to implement autocompletion. For example, when we type a search query on google, google quickly suggesting
+a few phrases that start with what do we have typed. But it is not sure, that the google implemented this using tries,
+but is one of the key application of tries.
+  cal ->
+    calculator
+    calcium
+    calculus
+
+Why not array of string?
+  1. If we have the large number of words or search queries, this array is going to waste a lot of space because a lot
+  of words have the same prefix.
+    [ pick,
+      picky,
+      pickle,
+      picture,
+      picnic ]
+
+  2. Looking at words that start with a prefix using arrays is relatively slow, we have to go through every word and
+  check to see if the word starts with our prefix. There are ways we can optimize this, but overall, arrays are not
+  ideal for solving this problem.
+
+Tries allow us to store thousands or even millions of words in minimal space and provide super fast lookup.
+
+                        ' '                 //root/empty character -> 1 x always whitespace, because english words can
+                                            start with any of 26 letters, we cannot have 26 roots, ours tree always
+                                            have a one root
+                (B)             (C)
+         (A)         (O)        (A)
+         (G)         (Y)        (T)
+
+  Bag and boy share the same prefix B. We have not duplicated characters in this structure. Similarly, if we want to
+  store the word baggage in this trie, we just need to extend the bag brunch. Both bag and baggage sharing the same
+  prefix. In this example, we have a tiny trie, but we can imagine , each node in this trie can have several children,
+  as many as the letters in the english language. So in English, we have 26 letters. And that means each node can have
+  up to 26  children.
+
+Lookup for BAG
+        root
+      B
+    A
+    G
+
+        Lookup
+          O(L)
+            Because the cost is depended of the length of the word we are looking at. It doesn't depend of the nodes in
+            this trie. If the longest word in this trie is 20 characters long, the time complexity of the search
+            operation is all of 20 in the worst case scenario.
+
+        Insert
+          O(L)
+            for each letter in a given word, we have to walk down our tree. If the current doesn't exist, we add it it
+            to our tree. The number of operations involved here is equal to the number of characters and the word we are
+            inserting
+
+        Delete
+          O(L)
+
+
+
+

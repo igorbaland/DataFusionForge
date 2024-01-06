@@ -1,0 +1,4 @@
+Tries are another kind of trees with fast operations, we can insert, lookup or remove a word from trie in
+  O (l), wher L is the length of the word. It doesn't matter how many words or phrases we have in a trie. We could
+  have  10 words or 10 million words, the cost of lookingup or inserting a new word would be constant and it will be
+  dependent on the length of the world. This is the reason why tries our ideal accomplish.
