@@ -1,0 +1,57 @@
+We can start traversing from any nodes and with this will see the nodes that are reachable from that node, not all nodes
+in the graph. A real application of this is in finding people who are
+  directly or indirectly connected to a person. In this graph we can see that John is connected to Bob, but Bob is not
+  connected to anyone else. So if we start traversing from Bob we only visit Bob, our traversal end here.
+
+
+
+Depth-first
+      (A) ---> (B)
+     /          /\
+   <-         <-  ->
+ (E)        (D) <-- (C)
+   We start from the node and
+     recursively
+       visit all of this neighbors going really deep in our graph.
+   But we can also use
+     iteration
+
+   We start from the (A) and visit this node. Now we look at at its neighbors (B) and (E). Let's assume that the (B) was
+   inserted first. So we go down this path and visit the (B). Now we look at the neighbors of the (B), let's assume that
+   (C) was inserted first, so we take this route and go to the (C). The (C) has only a single neighbor , so we go to the
+   (D), but this node doesn't have any neighbors because there is no link from the (D) to any other nodes. Our recursion
+   ends here. With this algorithm, we go really eep in our graph.
+     Now we go back to (C), this node doesn't have any neighbors. So we go back to the (B). We visited the right
+     neighbor of the (B). Now we should look at his left neighbor. But we have already visited (D), we don#t want to
+     visit it again. so we are done with the (B) and go back to (A). Now here at the (A) , we should look at it's
+     neighbor (E) and our traversal ends here.
+
+   Start from the (B) would visit the (C) and (D), but not the other nodes  because there is no path to those nodes.
+
+   That is difference between traversing graphs and trees.
+
+
+Breath-first
+    (A) ---> (B)
+    |         |
+  <-          ->
+(D)     <---      (C)
+
+  Queue.add(start_node)
+  Front [A] Back
+    remove the item from our queue and visit it
+      print: A
+        Then we are going to look at it's unvisited neighbors.
+          Front [B, C] Back
+            print: B        pop: B
+              unvisitedNeighborsB:
+                add: D
+                  print: C      pop: C
+                    Front [D] Back
+                    print: D    pop: D
+
+
+   if node is not empty, we are gonna continue our traversal
+
+
+

@@ -1,0 +1,74 @@
+One way to represents a graph using a matrix or two dimensional array. Using this matrix, we can see how nodes are
+connected. For every node in our graph , we are going to have a row  and a column. If two nodes are connected, we mark
+their intersection with one or true
+
+        John    Mary    Bob     Alice
+John    0       1       1       1               Adjacency Matrix
+Mary    0       0       1       1
+Bob     0       0       0       0
+Alice   0       0       1       0
+
+The problem with this approach
+  is the amount of space we need to allocate for this matrix. If we have have n nodes, our space complexity is going to
+  be
+    O(n²), that can grow very fast. For example, if we have 1000 nodes, our matrix is going to have 1 million entries.
+    In the next section, we will solve this problem with another approach.
+
+Operations:
+  if we want to add a node, we have to allocate a new matrix with one extra row and column. And then copy all the
+  existing items in this matrix into the new one.
+
+  Add node
+    O(n²) expensive operation. We can optimize this by pre allocating a large matrix, so we don't have to copy all these
+    items every time we add a new node. But again, this is going to waste memory. Also, when we talking about graphs,
+    we prefer to express the time complexity in terms of V, which is the number of vertices or node in this graph.
+      Number of edges (add node)
+        O(V²)
+            also effect the runtime complexity
+
+  Removing nodes or vertex.
+    we have allocate a new smaller matrix and copy items around.
+
+  Adding an edge
+    first we need to find the index of these nodes, we can use a hashTable to store our nodes and their indexes in the
+    adjacency matrix. So in this HashTable, we map our nodes to their indexes in the JSON matrix. If we want to add an
+    edge between Alice and John, we find our indexes using this hashtable that's
+        O(1)
+            Once we have the indexes, we can quickly to go to the corresponding item in our matrix and turn it on. So
+            adding an edge is pretty fast and runs in constant time.
+  Removing an edge
+    O(1)
+      this the same an adding an edge. We have to go to a given entry in our matrix and set it it to false.
+
+  Query Edge:
+    O(1)
+      How much checking to see if two nodes are connected?
+        We want to see if Alice and John are connected.
+          we lookup at their indexes and read the value of corresponding entry in our matrix.
+
+  Finding all the nodes adjacent or directly connected to a node
+    that means the neighboring node is this matrix. How can we find the neighbors of Alice? First we have to use our
+    hashTable, to find the index of Alice in our matrix. Now we need to look at every item in this row to find the
+    connected nodes. How many items do we have  in this row? That is equal to the number of nodes or vertices. So
+    finding the neighbors of a node runs in
+        O(V) and that means if we have 1 million people or nodes in this graph, and john is connected with only three
+        people, we have to check the connection between john and all the other 1 million people just to  discover his
+        three connections.
+
+Adjacency matrix (overall)
+  Space
+    O(V²)
+  Add Edge
+    O(1)
+  Remove Edge
+    O(1)
+  Query Edge
+    O(1)
+  Find Neighbors
+    O(V)
+  Add Node
+    O(V²)
+  Remove Node
+    O(V²)
+
+

@@ -1,0 +1,79 @@
+Another way to represent the edges in the graph is using what we call
+  adjacency list
+    which has an array of linked lists. In every element in this array we have a linkedList. And this linkedList
+    contains the adjacent nodes or the neighbor of a given node. Instead of using a matrix to store all combinations
+    of edges, just to turn some of them on, we only store the edges that exists. Just like before, we have a hashTable
+    for finding the index of a node. Here the index of John is zero. And the first element in our adjacency list
+    represents the neighbors of john. In our graph John is connected to Mary, Bob and Alice.
+
+    0   (1)->(2)->(3)       John: 0
+    1   (2)->(3)            Mary: 1
+    2                       Bob: 2
+    3   (1)                 Alice: 3
+
+That's why this list is more space efficient than the matrix.
+
+Base Complexity
+  Space:
+    O(V)
+      one entry for each node. For each node we are going have zero or more edges. This can  vary from one node to
+      another
+    How many edges edges do we have in total?
+      Let's represent that with E. The space complexity of the adjacency list is
+        O(V + E)
+
+
+Worst case scenario
+    That's when every node  is connected to every other node, we say we have a
+      DENSE GRAPH
+        E = V x (V - 1)
+      Total number of edges
+        E = V² - V
+      Space complexity
+        O(V + E) = O(V²)
+
+
+Time complexity
+  add node
+    O(1)
+  remove node
+    O(V²)
+    worst case:
+     E=V²
+    we should remove the corresponding element from adjacency list and make sure no other nodes have a linked to this
+    node. We have to iterate over our adjacency list and remove the target node from very linkList
+  add edge (simply graphs, not multi graphs)
+    O(K)
+    Worst case:
+      O(V)
+  remove edge
+    O(K)
+    worst case:
+      O(V)
+  Query Edge:
+    O(K)
+    worst case:
+      O(V)
+  find neighbors
+    O(K)
+    Worst case:
+      O(V)
+
+                Matrix          List
+Space           O(V²)           O(V+E)
+Add edge        O(1)            O(K)
+Remove edge     O(1)            O(K)
+Query edge      O(1)            O(K)
+Find neighbors  O(V)            O(K)
+Add node        O(V²)           O(1)
+Remove node     O(V²)           O(V²)
+
+Worst Case scenario
+                Matrix          List
+Space           O(V²)           O(V²)
+Add edge        O(1)            O(V)
+Remove edge     O(1)            O(V)
+Query edge      O(1)            O(V)
+Find neighbors  O(V)            O(V)
+Add node        O(V²)           O(1)
+Remove node     O(V²)           O(V²)

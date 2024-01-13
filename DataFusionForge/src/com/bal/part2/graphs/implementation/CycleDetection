@@ -1,0 +1,29 @@
+CycleDetection(Directed Graphs)
+
+  > (A) ---------> (B)
+ |      ------       |
+ |           |       --->
+ |           |              (C)
+ |           ---------->
+ (D)
+
+We need to maintain three sets of nodes
+    1. all
+        to keep track of all nodes in our graph
+
+
+    2. visiting
+        want to store nodes that we are currently visiting
+
+
+    3. visited
+        store the node we have visited
+
+            The difference between the 2. and 3.
+              if we visit a node and all of this children, we put it in the visitedSet. But as long as we haven't
+              visited all of the children of a node, we are gonna to keep it in the visitingSet.
+
+
+
+
+

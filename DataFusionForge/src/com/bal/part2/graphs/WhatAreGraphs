@@ -1,0 +1,38 @@
+We use Graph to represent connected objects such as the routers in a network or people on a social media platform.
+Using a graph, we can see how people are connected and how strong these connections are.
+Just like trees, graph consist of nodes and edges. In fact, mathematically speaking, a tree is a kind a graph without
+any cycles.
+We don't have a root node.
+
+Here we have a graph with four nodes and six edges (lines). This nodes is also called Vertices, this the plural of
+Vertex, vertex is an older term.
+
+    (John) --- (Mary)           () Vertex
+     |     \ /   |
+     |     / \   |
+    (Bob) ---  (Alice)
+                    \
+                    (Sam)
+
+    These nodes can be connected to any other nodes. We don't have a limitation in terms of how many connections or
+    edges we can have for one node. If two nodes are directly connected, we say  they are adjacent or neighbors.
+    (John)
+        |           Adjacent
+    (Bob)
+
+    But John and Sam aren't, because the are not directly connected
+
+If all nodes have a directly edges, we say
+  directed graph
+
+  undirected graphs
+    are like a facebook and linkedIn. If we add someone as a friend, there will be a line or connection between the two
+    of us and this connection doesn't have a direction.
+
+These edges can also have a weight. We use this weight to represent how strong a connection is. For example, on a social
+platform, if two interact a lot,  we can put a higher weight on their connection. Later, we can show their best friends
+by finding the neighboring node with the highest weights.
+
+Another application of graphs is in finding the shortest path between two nodes. for example, we can use a graph to
+represent how different cities or areas are connected. The weight we put on these edges can represent the distance
+traveling cost or traffic conditions.

@@ -1,0 +1,80 @@
+Let#s say we have a project like a web  or a mobile app and this project is dependent on the code and few other
+projects. When we want to compile or build our project, all these dependencies should be compiled in right order.
+
+How do we find the right order?
+  Using a Graph
+
+        ---> (A) --->
+  (X)                   (P)
+        ---> (B) --->
+
+  Here the (P) represents our project. Let#s say this project is dependent on two other libraries,
+    1. for image manipulation
+    2. for data encryption
+      So in order for us to build the (P),
+        first we should build the
+          (A) and (B)
+            However, bot these projects are dependent on another project that provides a bunch of reusable building
+            blocks,
+              that ist (X) here.
+
+  In order for us to build our project, we have to build
+    (X)
+      follow by the (A) and (B)
+        and then the (P)
+        This is what we call
+          TOPOLOGICAL SORTING
+            with topological sorting  algorithm, we can figure out the right order that we need to process the nodes of
+            a graph
+  In this example our nodes represents
+    project.
+      Another Application is in
+        scheduling jobs
+          if we have  a bunch of jobs that are dependent on each  other, we can use the TOPOLOGICAL SORTING ALGORITHM
+          to come up with the right order to perform these jobs.
+
+A couple of things we need to know about this algorithm
+  1. It doesn't produce unique results. If topological sort this graph, we can get
+    XABP or XBAP, what we will get depends on how we have implemented this algorithm. There are different ways to
+    topological sort of graph.
+  2. This algorithm only works on Graph without a cycle. For example, if we add a link between
+    (X) <--- (P), we are essentially saying that in order to build the (P) , we should build (X) first, but the X can be
+    built if the (P) is built first. It doesn't make sense. This algorithm works on graphs without cycle. We call this
+    graphs
+     DIRECTED ACYCLIC GRAPHS or DAG  for short. A cycling means, without a cycle. So our graph should be directed and a
+     cyclic
+
+How this algorithm works?
+  We pick a node and do a depthFirstTraversal and that means  there are no projects or nodes that are dependent on this
+  node. So this node should be the last node when we topological a sort of graph. The Idea of this algorithm is that we
+  do at the depthFirstTraversal in our graph, eventually we will find nodes that don't have any outgoing edges, which
+  means other nodes are not dependent on them. When we calculating the order, these nodes should be towards the end. In
+  contrast, nodes that have outgoing edges and are basically on top of the hierarchy should come first, we use the
+    Stack to implement this algorithm. So using a depthFirstTraversal
+      we go deep in our graph and add a node to our stack. As we come back up we add the currentNode to the stack if
+      we have visited all of this children.
+
+       We start with (X) -> (A) -> (P), our recursion stops here, because the (P) doesn't have any children or neighbors
+
+                      ---> (A) --->
+                (X)                   (P)
+                      ---> (B) --->
+
+              Stack
+
+                4. X
+                3. B
+                        added A to our Stack, but we can't add the X, because X has a child, so we go to the B and than
+                        P. But we we have already added P. So we gob back to the B.
+
+                2. A        //we have visited all the children of the A, we put A into our stack
+
+                        added P to our Stack, we go back
+                1. P        //we have visited all the children of the P, we put P into our stack
+
+                    stack = [X, B, A, P]
+
+       What if we start our traverse all from the P?
+         We wouldn't able to visit any other nodes. We can use for loop and do it depthFirstTraversal on each node. With
+         this we will eventually visit every node in this graph.
+
