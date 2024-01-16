@@ -1,0 +1,19 @@
+A --3--  B \
+|\       |   1
+4 --2--  6     -- E
+|       \|   5
+C --1--  D  /
+
+We want to find the shortest path between A and E. With this algorithm, we are going to generate a table of information
+like this.
+
+Node        Distance        Previous
+A           0
+B           3               A
+C           3               D
+D           2               A
+E           4               B
+
+
+PriorityQueue
+  BreadthSearchAlgorithm
